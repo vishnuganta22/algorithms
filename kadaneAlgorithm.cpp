@@ -7,6 +7,18 @@
 
 using namespace std;
 
+//  Kadane’s Algorithm
+void printSubArrayOfMaxSumUsingAlg(int* arr, int size){
+    int gMax = INT_MIN;
+    int lMax = 0;
+    for(int i = 0; i < size; i++){
+        lMax = lMax + arr[i];
+        if(lMax > gMax) gMax = lMax;
+        if(lMax < 0) lMax = 0;
+    }
+    cout<<"Max Sum Using  Kadane’s Algorithm :: " << gMax << endl;
+}
+
 // Brute force method
 void printSubArrayOfMaxSum(int* arr, int size){
     int maxSum = INT_MIN;
@@ -18,7 +30,7 @@ void printSubArrayOfMaxSum(int* arr, int size){
             if(previous > maxSum) maxSum = previous;
         }
     }
-    cout<<"Max Sum :: " << maxSum<<endl;
+    cout<<"Max Sum Using Brute Force :: " << maxSum<<endl;
 }
 
 int main()
@@ -30,5 +42,7 @@ int main()
         cin>>arr[i];
     }
     printSubArrayOfMaxSum(arr, size);
+    printSubArrayOfMaxSumUsingAlg(arr, size);
     return 0;
 }
+
