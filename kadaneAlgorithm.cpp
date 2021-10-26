@@ -1,6 +1,10 @@
 // Maximum Subarray Problem
 // The maximum subarray problem is the task of finding the largest possible sum of a contiguous subarray, within a given one-dimensional array A[1…n] of numbers
 
+// Explanation: 
+// The simple idea of Kadane’s algorithm is to look for all positive contiguous segments of the array (lMax is used for this). And keep track of maximum 
+// sum contiguous segment among all positive segments (gMax is used for this). Each time we get a positive-sum compare it with gMax and update gMax 
+// if it is greater than gMax. 
 
 #include <iostream>
 #include <limits.h>
