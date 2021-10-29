@@ -31,7 +31,7 @@ int findMatch(string mString, int mLength, string qString, int qLength, long has
 	for(int i = 0; i < qLength; i++){
 		sHash += ((int(mString[i]) - 96) * pow(24, qLength - i - 1));
 	}
-	for(int i = 0; i < mLength - qLength; i++){
+	for(int i = 0; i < mLength - qLength + 1; i++){
 		if(hashCode == sHash && checkIfMatched(mString, mLength, qString, qLength, i)) count++;
 		sHash = ((sHash - fHash) * 24) + (int(mString[i + qLength]) - 96);
 		fHash = (int(mString[i + 1]) - 96) * temp; 
